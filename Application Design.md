@@ -1,5 +1,5 @@
 ###Difference between System Design & Clean Architecture:
-###System Design
+### 1. System Design
 │
 ├── High-level architecture (services, DB, cache, APIs)
 │
