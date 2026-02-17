@@ -1,13 +1,13 @@
-What is an array? 
-An array is a contiguous block of memory, used to store elements of the same type which can be accessed via an index.
+### What is an array? 
+- An array is a contiguous block of memory, used to store elements of the same type which can be accessed via an index.
 
-Why is array access O(1)?
-Because arrays use contiguous memory, allowing direct address calculation using index.
+### Why is array access O(1)?
+- Because arrays use contiguous memory, allowing direct address calculation using index.
 
-What are the disadvantages of arrays?
-Fixed size,
-Not suitable for dynamic data,
-Costly insertion/deletion (O(n)due to shifting).
+### What are the disadvantages of arrays?
+-Fixed size,
+-Not suitable for dynamic data,
+-Costly insertion/deletion (O(n)due to shifting).
 
 What is List<T>?
 Lists are dynamic collections in .Net that internally uses an array and automatically resizes when needed.
