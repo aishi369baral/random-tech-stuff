@@ -12,6 +12,7 @@ System Design
 - **Clean Architecture decides** = HOW code inside a component is written || is about structuring code inside a service for testability, maintainability and scalibility by separation of concerns.
 
 ---
+
 #### Postgres vs SQLite 
 - **SQLite**
 - *Pros:*
@@ -37,6 +38,7 @@ Postgres -> real-world, multi-user apps
 ```
 
 ---
+
 #### What does "Zero Config" mean for SQLite?
 **What is config:**
 ```
@@ -76,8 +78,10 @@ Data Source = followup.db
 - If file exists --> DB works
 - If it doesn't --> SQLite creates it
 
-***Zero Configuration.***
+*Zero Configuration.*
+
 ---
+
 #### Why is SQLite file-based?
 SQLite stores everything in one file:
 ```
@@ -94,11 +98,14 @@ Inside that file:
 - Easy to delete
 - Easy to reset
 
-***But not great for many user at once.***
+*But not great for many user at once.*
+
 ---
+
 #### What is high Concurrency?
   
 ---  
+
 #### What is Swagger?
 **Swagger**
 - Auto-generates API UI
@@ -121,8 +128,10 @@ Inside that file:
 - Pure API
 - No UI
 
-**Swagger replaces UI for APIs**
+*Swagger replaces UI for APIs*
+
 ---
+
 #### Why EbookStore and Followup tracker has different code structure?
 **EbookStore:**
 - Server-side rendering
@@ -132,7 +141,8 @@ Inside that file:
 - API-first
 - Frontend separated
 
-***Modern Architecture***
+*Modern Architecture*
+
 ---
 #### Models vs Data folder
 ```
@@ -140,7 +150,8 @@ Models --> Business entities
 Data --> Database configuration
 ```
 ---
-#### Web App vs Web API
+
+#### Web App vs Web API :
 **Web App:**
 - Renders HTML
 - Razor Views
@@ -149,6 +160,7 @@ Data --> Database configuration
 - Returns JSON
 - Used by Frontend/mobile apps
 ---
+
 #### GUID vs Integer IDs
 **Integer**
 - Simple
@@ -159,6 +171,7 @@ Data --> Database configuration
 - Safe across system
 - Best for distributed apps
 ---
+
 #### Where to put ConnectionStrings?
 **Best practice for now:**
 ```
