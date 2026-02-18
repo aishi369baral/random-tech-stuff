@@ -35,6 +35,8 @@ System Design
 SQLite -> learning/local/small apps
 Postgres -> real-world, multi-user apps
 ```
+
+---
 #### What does "Zero Config" mean for SQLite?
 **What is config:**
 ```
@@ -75,7 +77,7 @@ Data Source = followup.db
 - If it doesn't --> SQLite creates it
 
 ***Zero Configuration.***
-
+---
 #### Why is SQLite file-based?
 SQLite stores everything in one file:
 ```
@@ -86,63 +88,77 @@ Inside that file:
 - Rows
 - Indexes
 - Data
+
 **Why file-based matters:**
 - Easy to copy
 - Easy to delete
 - Easy to reset
-  ***But not great for many user at once.***
 
-  #### What is high Concurrency?
+***But not great for many user at once.***
+---
+#### What is high Concurrency?
   
-  
+---  
 #### What is Swagger?
 **Swagger**
 - Auto-generates API UI
 - Lets you test APIs in browser
+
 **Used when**
 - Building APIs
 - Testing endpoints
+
 **Alternatives**
 - Postman
 - Insomnia
+---
 #### Why SWagger is used in Followup Tracker but not in Ebookstore?
 **EbookStore**
 - MVC app
 - Views + Controllers
+
 **Followup**
 - Pure API
 - No UI
+
 **Swagger replaces UI for APIs**
+---
 #### Why EbookStore and Followup tracker has different code structure?
 **EbookStore:**
 - Server-side rendering
 - Views + Controllers tightly coupled
+
 **FollowUp:**
 - API-first
 - Frontend separated
-***Modern Architecture***
 
+***Modern Architecture***
+---
 #### Models vs Data folder
 ```
 Models --> Business entities
 Data --> Database configuration
 ```
+---
 #### Web App vs Web API
 **Web App:**
 - Renders HTML
 - Razor Views
+
 **Web API**
 - Returns JSON
 - Used by Frontend/mobile apps
+---
 #### GUID vs Integer IDs
 **Integer**
 - Simple
 - Database-managed
+
 **GUID**
 - Globally unique
 - Safe across system
 - Best for distributed apps
-
+---
 #### Where to put ConnectionStrings?
 **Best practice for now:**
 ```
@@ -151,6 +167,7 @@ appsettings.Development.json
 **Because:**
 - Local DB
 - Dev-only
+
 **Later:**
 - Production secrets go to environment variables.
 
