@@ -62,11 +62,11 @@ Password = ****
 - Open ports
 - Manage permissions
 **For SQLite = zero config**
-  - No username
-  - No password
-  - No server
-  - No port
-  - No setup screen
+- No username
+- No password
+- No server
+- No port
+- No setup screen
 ```
 Data Source = followup.db
 ```
