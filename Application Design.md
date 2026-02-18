@@ -61,6 +61,7 @@ Password = ****
 - Create users
 - Open ports
 - Manage permissions
+
 **For SQLite = zero config**
 - No username
 - No password
@@ -72,6 +73,7 @@ Data Source = followup.db
 ```
 - If file exists --> DB works
 - If it doesn't --> SQLite creates it
+
 ***Zero Configuration.***
 
 #### Why is SQLite file-based?
