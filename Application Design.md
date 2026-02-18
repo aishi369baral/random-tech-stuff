@@ -11,7 +11,7 @@ System Design
 - **System design decides =** WHAT components exist || about designing scable systems.
 - **Clean Architecture decides** = HOW code inside a component is written || is about structuring code inside a service for testability, maintainability and scalibility by separation of concerns.
 
-***
+---
 #### Postgres vs SQLite 
 - **SQLite**
 - *Pros:*
@@ -45,7 +45,7 @@ Configuration = settings you mucst provide so something can work.
 - Username/password
 - Port number
 - Server address
-- Storage location
+- Storage location <br>
 **Normal DB (Postgres/SQL Server) need config like:**
 ```
 Server = localhost
