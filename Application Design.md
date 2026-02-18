@@ -13,12 +13,12 @@ System Design
 
 #### Postgres vs SQLite 
 - **SQLite**
-- Pros:
+- *Pros:*
 - Simple
 - File based
 - Zero config
 - Perfect for MVP
-- Cons:
+- *Cons:*
 - Not for high concurrency
 - Not enterprise-grade
 
