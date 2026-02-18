@@ -46,7 +46,7 @@ Configuration = settings you mucst provide so something can work.
 - Port number
 - Server address
 - Storage location
-<br>
+  
 **Normal DB (Postgres/SQL Server) need config like:**
 ```
 Server = localhost
