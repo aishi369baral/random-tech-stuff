@@ -59,7 +59,7 @@ users ---------->  |   Kestrel         ---------->    APP         |
 ```
 
 
-App hosted on **EC2 remote machine** (**with** IIS Express / Nginx):
+App hosted on **EC2 (REMOTE MACHINE)** (**with** IIS Express / Nginx):
 
 ```
 
@@ -114,16 +114,24 @@ users ---------->  |   -------------------->           Kestrel                  
 
 
                     EC2 (REMOTE MACHINE)
-                   --------------------------------------------------------------------------
-                   |                                                                        |
-         https               request                                    request           
-users ---------->  |-------------------->           Kestrel         ---------->    APP      |
-        request              forwarded             (app server)        reaching    
-                   |                                 5001 port                              |
+                   --------------------------------------------------------------------------------------------
+                   |                                                                                          |
+         https               request                                                    request           
+users ---------->  |-------------------->           Kestrel                           ---------->    APP      |
+        request              forwarded             (app server)                        reaching    
+                   |                                 5001 port                                                |
                                                 handles running 
-                   |                       the app and returning response json              |
-                   ---------------------------------------------------------------------------
+                   |                       the app and returning response json                                |
+                   --------------------------------------------------------------------------------------------
 
 
 
+```
+
+**It is Recommend or best practise to use a Web Server(IIS Express / Niginx) **
+
+**It is also Recommend to have a Application Load Balancer before Web Server**
+
+```
+users -> ALB -> Ec2 -> web server -> app server -> app
 ```
