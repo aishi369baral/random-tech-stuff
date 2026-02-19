@@ -425,6 +425,12 @@ JWT is used when:
 - Microservices
 - Scalable systems
 
+**Summary:** 
+```
+JWT Token is created by Auth/JWTService.cs in backend on Register/login ------>  (Authentication)
+Token sent to frontend which stores it
+Token is sent with each request to the backend  --------------------------------> (Authorization: checking what user can do)
+```
 ---
 
 #### What does stateless mean?
