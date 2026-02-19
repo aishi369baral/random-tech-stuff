@@ -378,5 +378,216 @@ appsettings.Development.json
 **Later:**
 - Production secrets go to environment variables.
 
-   
+---
 
+#### What is JWT Authentication?
+First what is Authentication?
+```
+Authentication = proving who you are
+```
+Examples:
+- Logging in with email + password
+- OTP verfication
+- Fingerprint / Face ID
+
+**JWT Authentication(simple meaning):**
+- JWT = JSON Web Token
+- JWT Authentication means:
+```
+After you log in once, the server gives you a signed token
+
+You send that token with every request to prove who you are
+```
+**Real-life analogy:**
+- Login = showing ID at reception
+- JWT = entry badge
+- Every room you enter -> you show the badge
+- No need to re-verify identity again and again
+
+**What does a JWT look like?**
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+it contains:
+- UserId
+- Email
+- Expiry time
+- Signature (to prevent tampering)
+
+---
+
+#### When is JWT used?
+JWT is used when:
+- You have APIs
+- Frontend and backend are separated
+- Mobile apps
+- SPA (React, Angular, Vue)
+- Microservices
+- Scalable systems
+
+---
+
+#### What does stateless mean?
+First what is state:
+```
+State = stored memory on server
+```
+Example:
+- Session stored in server memory
+- Server remembers logged-in users
+
+**Stateful authentication(old way)**
+- Server stores session
+- Each user has session data
+- Needs memory / database
+```
+Server remembers you
+```
+
+**JWT is Stateless**
+```
+Stateless = server remembers nothing
+```
+- Server does NOT store login info
+- Token itself contains all info
+- Server only verifies signature
+
+---
+
+#### Why stateless is powerful?
+- Easy to scale
+- No session storage
+- Works across servers
+- Cloud friendly
+
+---
+
+#### Summary (JWT)
+```
+Term                  Meaning
+JWT                   Signed identity token used for authentication
+Authentication        Proving identity
+Stateless             Server does not store login state
+Used in               APIs, SPAs, mobile apps
+```
+
+---
+
+#### What is a Rest API?
+What is an API?
+```
+API = way for programs to talk to each other
+```
+Example:
+
+- Browser -> Server
+- Mobile app -> Backend
+- Frontend -> Database (via backend)
+
+#### Rest API (Representational State Tranfer)(simple meaning)
+```
+REST = rules for building APIs
+```
+
+REST API means:
+```
+API that follows standard web rules using HTTP
+```
+
+**Core REST rules(simple)**
+- Uses HTTP methods
+- Uses URLs to represent resources
+- is stateless
+- Returns JSON
+
+**HTTP Methods you already use**
+| Method | Meaning     |
+| ------ | ----------- |
+| GET    | Read data   |
+| POST   | Create data |
+| PUT    | Update      |
+| DELETE | Remove      |
+
+
+**REST Example:**
+```
+GET/api/users
+POST/api/users
+GET/api/users/5
+```
+
+**REST API vs general API:**
+| API             | REST API           |
+| --------------- | ------------------ |
+| Any interface   | Follows REST rules |
+| Can be anything | Uses HTTP          |
+| May be stateful | Stateless          |
+| Any format      | Usually JSON       |
+
+REST is a type of APIs.
+
+**WHen do we use REST APIs?**
+Use REST when:
+
+- Frontend & backend ar separate
+- Mobile apps
+- Web apps
+- Public APIs
+- Microservices
+
+
+---
+
+#### Authentication vs Authorization
+
+**Authentication (WHO are you)**
+- Login
+- Verify identify
+- Email + password
+
+Example:
+```
+"I am Aishi"
+```
+
+**Authorization (What can you do)**
+- Permissions
+- Roles
+- Access control
+
+Example:
+```
+"Can Aishi delete users?"
+```
+
+**Example in app:**
+| Step          | Meaning        |
+| ------------- | -------------- |
+| Login         | Authentication |
+| Admin role    | Authorization  |
+| Delete client | Authorization  |
+| View own data | Authorization  |
+
+**Quick comparison table:**
+| Authentication | Authorization   |
+| -------------- | --------------- |
+| Who you are    | What you can do |
+| Login          | Permissions     |
+| Happens first  | Happens after   |
+
+
+**How JWT fits here:**
+```
+- JWT handles authentication
+- Authorization uses JWT claims(roles, permission)
+```
+
+---
+
+#### Final mental model:
+
+- JWT = digital ID card
+- Stateless = server has no memory
+- REST = rules for API design
+- Authentication = identity
+- Authorization = permissions
