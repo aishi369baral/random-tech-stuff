@@ -478,6 +478,74 @@ Used in               APIs, SPAs, mobile apps
 ```
 
 ---
+#### What does it mean to Serialize the JwtSecurityToken? and why it is needed?
+
+You create this object:
+
+```
+var token = new JwtSecurityToken(
+    issuer: _config["Jwt:Issuer"],      // you created the token. your API verifies it later
+    audience: _config["Jwt:Audience"],   // Who it was created for. Prevent token reuse in another system 
+    claims: claims,                        // Claims: user data inside the token
+    expires: DateTime.UtcNow.AddDays(7),    // Token Lifetime (7 days)
+    signingCredentials: creds                // Attaches the digital signature
+);
+
+```
+
+This is a C# object, which can not be sent over Http.
+### Serializing = converting the object ---> compact string
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+```
+
+That string is what:
+- goes to the browser
+- is stored in localStorage/cookies
+- is sent in Authorization: Bearer <token>
+
+```
+without serialization -> the token can't travel over the network.
+```
+---
+#### What is Encoding.UTF8.GetBytes() /
+it converts a string -> byte[]
+```
+"MySecretKey123"
+```
+becomes:
+```
+[77, 121, 83, 101, 99, 114, 101, 116, 75, 101, 121, 49, 50, 51]
+```
+**Why this is needed:**
+
+Cryptographic function do not work with strings.
+They work with raw bytes.
+
+So we convert:
+```
+secret text -> bytes -> used by crypto algorithm (HMACSHA256 signing algorithm) 
+```
+
+#### What is the "secret key string" ?
+```
+your server's private password for signing tokens
+```
+
+**Why it is needed?**
+it is used to:
+
+- prove the token was created by your server
+- detect if someone modified the token
+
+**If the key changes -> tokens become invalid**
+
+
+**Summary:**
+- The secret key is converted from string -> byte[] (using Encoding.UTF8.GetBytes())
+- the newly converted key then is used by the server to sign the JWT token using HMACSHA256 signing algorithm. 
+--- 
 
 #### What is a Rest API?
 What is an API?
