@@ -61,6 +61,7 @@ users ---------->  |   Kestrel         ---------->    APP         |
 
 App hosted on **EC2 (REMOTE MACHINE)** (**with** IIS / Nginx):
 - IIS can only run on EC2 with a Windows OS.
+- Niginx can only run on EC2 with a Linux OS.
 
 ```
 
@@ -153,11 +154,11 @@ A development only tool that provides a fast Http Server for dev environment,
 ```
 
 
-#### Difference between IIS Express | IIS | Kestrel | Vite :
+#### Difference between IIS Express | IIS |  Nginx  | Kestrel | Vite :
  All of these are different types of servers:
 
-| IIS Express            | IIS                 | Kestrel                    | Vite                      |
-| ---------------------  | ------------------- | -------------------------- | ------------------------- |
-| A Web Server           | A Web Server        | A App Server + HTTP Server | A HTTP Server + build tool|
-| for development only   | for production only | for dev & prod both        | for development only      |
+| IIS Express          | IIS                                     | Nginx                                | Kestrel                    | Vite                       |
+| ---------------------| --------------------------------------- |-------------------- ---------------  | -------------------------- | -------------------------- |
+| A Web Server         | A Web Server (in a EC2 with windows OS) | A Web Server (in a EC2 with linux OS)| A App Server + HTTP Server | A HTTP Server + build tool |
+| for development only | for production only                     | for production only                  | for dev & prod both        | for development only       |
 
