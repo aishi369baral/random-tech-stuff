@@ -183,3 +183,13 @@ A development only tool that provides a fast Http Server for dev environment,
 | **Examples**                | Node `http`, Vite (dev)             | IIS, Nginx, Apache             | Kestrel, Tomcat, WebLogic           |
 | **Used in frontend?**       | ⚠️ Dev only                         | ✅ Production static hosting    | ❌ No                                |
 | **Used in backend?**        | ⚠️ Internal                         | ✅ Front-facing                 | ✅ Core backend                      |
+
+
+**HTTP Server :**
+- Software that understand Http & responds to requests.
+
+**Web Server :**
+- An Http Server optimized to serve web content (Static files) & manage traffic.
+
+**App Server :**
+- Software that executes application code and bussiness logic
