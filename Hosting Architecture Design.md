@@ -66,9 +66,9 @@ App hosted on **EC2 (REMOTE MACHINE)** (**with** IIS Express / Nginx):
                     EC2 (REMOTE MACHINE)
                    --------------------------------------------------------------------------------------------------------
                    |                                                                                                      |
-         http                                          request                                    request           
-users ---------->  |   IIS  Express / Niginx      -------------------->           Kestrel         ---------->    APP      |
-        request       (web server)                    forwarded                  (app server)     reaching    
+         http                                          request                               request           
+users ---------->  |     IIS / Niginx      -------------------->           Kestrel         ---------->    APP      |
+        request          (web server)                 forwarded         (app server)      reaching    
                    |      80 port                                                                                         |
                           handles http/https                                 handles running 
                    |       requests i.e web traffics                  the app and returning response json                 |
@@ -81,9 +81,9 @@ users ---------->  |   IIS  Express / Niginx      -------------------->         
                    --------------------------------------------------------------------------------------------------------
                    |                                                                                                      |
          https                                          request                                    request           
-users ---------->  |   IIS  Express / Niginx      -------------------->           Kestrel         ---------->    APP      |
-        request       (web server)                    forwarded                  (app server)     reaching    
-                   |      443 port                                                                                        |
+users ---------->  |            IIS / Niginx      -------------------->           Kestrel         ---------->    APP      |
+        request                 (web server)           forwarded                  (app server)     reaching    
+                   |           443 port                                                                                        |
                           handles http/https                                 handles running 
                    |       requests i.e web traffics                  the app and returning response json                 |
                    --------------------------------------------------------------------------------------------------------
@@ -144,9 +144,19 @@ users -> ALB -> Ec2 -> web server -> app server -> app
 
 Vite:
 ```
-A light weight Web Server for dev environment,
+A development only tool that provides a fast Http Server for dev environment,
 - Handles Http/Https requests,
 - Returns Static files as response.
 - Adds dev-only magic (hot reload, module replacement)
 
 ```
+
+
+#### Difference between IIS Express | IIS | Kestrel | Vite :
+ All of these are different types of servers:
+
+| IIS Express            | IIS                 | Kestrel                    | Vite                      |
+| ---------------------  | ------------------- | -------------------------- | ------------------------- |
+| A Web Server           | A Web Server        | A App Server + HTTP Server | A HTTP Server + build tool|
+| for development only   | for production only | for dev & prod both        | for development only      |
+
