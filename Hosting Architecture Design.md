@@ -59,7 +59,8 @@ users ---------->  |   Kestrel         ---------->    APP         |
 ```
 
 
-App hosted on **EC2 (REMOTE MACHINE)** (**with** IIS Express / Nginx):
+App hosted on **EC2 (REMOTE MACHINE)** (**with** IIS / Nginx):
+- IIS can only run on EC2 with a Windows OS.
 
 ```
 
@@ -93,7 +94,7 @@ users ---------->  |            IIS / Niginx      -------------------->         
 ```
 
 
-App Hosted on **EC2 (REMOTE MACHINE)** (**without** IIS Express/Nginx):
+App Hosted on **EC2 (REMOTE MACHINE)** (**without** IIS /Nginx):
 
 ```
 
