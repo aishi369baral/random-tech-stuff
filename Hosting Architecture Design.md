@@ -128,10 +128,25 @@ users ---------->  |-------------------->           Kestrel                     
 
 ```
 
+
 **It is Recommend or best practise to use a Web Server(IIS Express / Niginx) **
 
 **It is also Recommend to have a Application Load Balancer before Web Server**
 
 ```
 users -> ALB -> Ec2 -> web server -> app server -> app
+```
+
+
+#### For the Frontend (React + Vite) in Development Environment:
+ In case we are using React + Vite for the frontend code:
+ - We can use Vite.
+
+Vite:
+```
+A light weight Web Server for dev environment,
+- Handles Http/Https requests,
+- Returns Static files as response.
+- Adds dev-only magic (hot reload, module replacement)
+
 ```
