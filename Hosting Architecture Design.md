@@ -157,8 +157,9 @@ A development only tool that provides a fast Http Server for dev environment,
 #### Difference between IIS Express | IIS |  Nginx  | Kestrel | Vite :
  All of these are different types of servers:
 
-| IIS Express          | IIS                                     | Nginx                                | Kestrel                    | Vite                       |
-| ---------------------| --------------------------------------- |-------------------- ---------------  | -------------------------- | -------------------------- |
-| A Web Server         | A Web Server (in a EC2 with windows OS) | A Web Server (in a EC2 with linux OS)| A App Server + HTTP Server | A HTTP Server + build tool |
-| for development only | for production only                     | for production only                  | for dev & prod both        | for development only       |
+| IIS Express          | IIS                    | Nginx               | Kestrel                    | Vite                       |
+| ---------------------| -------------------    |---------------------| -------------------------- | -------------------------- |
+| A Web Server         | A Web Server           | A Web Server        | A App Server + HTTP Server | A HTTP Server + build tool |
+| for development only | for production only    | for production only | for dev & prod both        | for development only       |
+|                      | In EC2 with windows OS | In EC2 with linux OS|                            |                            |
 
