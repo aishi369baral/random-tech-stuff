@@ -163,3 +163,23 @@ A development only tool that provides a fast Http Server for dev environment,
 | for development only | for production only    | for production only | for dev & prod both        | for development only       |
 |                      | In EC2 with windows OS | In EC2 with linux OS|                            |                            |
 
+
+#### Difference between HTTP Server, Web Server, App Server :
+
+| Aspect                      | **HTTP Server**                     | **Web Server**                 | **Application Server (App Server)** |
+| --------------------------- | ----------------------------------- | ------------------------------ | ----------------------------------- |
+| **Core purpose**            | Understands & handles HTTP protocol | Serves web content efficiently | Runs application/business logic     |
+| **Understands HTTP?**       | ✅ Yes                              | ✅ Yes                          | ✅ Yes                               |
+| **Serves static files**     | ⚠️ Can (basic)                      | ✅ Yes (optimized)              | ❌ Usually no                        |
+| **Executes business logic** | ❌ No                                | ❌ No                           | ✅ Yes                               |
+| **Runs application code**   | ❌ No                                | ❌ No                           | ✅ Yes                               |
+| **Connects to database**    | ❌ No                                | ❌ No                           | ✅ Yes                               |
+| **Handles HTTPS / TLS**     | ⚠️ Basic                            | ✅ Yes (full support)           | ❌ Usually delegated                 |
+| **Reverse proxy support**   | ❌ No                                | ✅ Yes                          | ❌ No                                |
+| **Load balancing**          | ❌ No                                | ✅ Often                        | ❌ No                                |
+| **Caching / compression**   | ❌ No                                | ✅ Yes                          | ❌ No                                |
+| **Production ready**        | ❌ Usually no                        | ✅ Yes                          | ✅ Yes                               |
+| **Typical role**            | Low-level protocol handler          | Front-facing traffic manager   | Backend logic executor              |
+| **Examples**                | Node `http`, Vite (dev)             | IIS, Nginx, Apache             | Kestrel, Tomcat, WebLogic           |
+| **Used in frontend?**       | ⚠️ Dev only                         | ✅ Production static hosting    | ❌ No                                |
+| **Used in backend?**        | ⚠️ Internal                         | ✅ Front-facing                 | ✅ Core backend                      |
